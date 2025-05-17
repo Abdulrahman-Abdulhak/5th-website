@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Poppins, Raleway } from "next/font/google";
 
+import { NotificationBoard } from "@/core";
+
 import "./globals.css";
 import { Footer } from "./shared";
 
@@ -39,6 +41,10 @@ export default function RootLayout({
       >
         <main>{children}</main>
         <Footer />
+
+        <div className="overlay">
+          <NotificationBoard />
+        </div>
       </body>
     </html>
   );
