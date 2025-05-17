@@ -1,6 +1,10 @@
-import { isServerUp } from "services";
+import { isServerUp, login, register } from "services";
 
 export default async function Home() {
-  const serverUp = await isServerUp();
-  return <div>{serverUp ? "server is up" : "server is down"}</div>;
+  const cred = await login({
+    username: "abd",
+    password: "pass1!@dSds",
+  });
+
+  return <div>{JSON.stringify(cred)}</div>;
 }

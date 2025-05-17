@@ -1,3 +1,5 @@
+"use server";
+
 import serverAPI from ".";
 
 const basePath = "/test";

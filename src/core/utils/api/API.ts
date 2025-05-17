@@ -8,19 +8,28 @@ type AllHeaders = {
   [key in HeaderTypes]?: Headers;
 };
 
-export default class API {
-  private static API_INSTANCES: Map<string, API> = new Map();
+type ResSuccess<T, DefaultSuccess> = DefaultSuccess extends null
+  ? T
+  : DefaultSuccess & T;
+
+export default class API<DefaultSuccess = null, DefaultError = null> {
+  private static API_INSTANCES: Map<string, API<any, any>> = new Map();
 
   /**
    * Ensures a single instance of API only is ever created with the passed baseURL when calling this method
    * @param baseURL The base URL for the api. (The starting point of which every call will occur)
    * @returns Single API instance
    */
-  public static single(baseURL: string) {
+  public static single<DefaultSuccess = null, DefaultError = null>(
+    baseURL: string
+  ) {
     if (this.API_INSTANCES.has(baseURL))
-      return this.API_INSTANCES.get(baseURL) as API;
+      return this.API_INSTANCES.get(baseURL) as API<
+        DefaultSuccess,
+        DefaultError
+      >;
 
-    const api = new API(baseURL);
+    const api = new API<DefaultSuccess, DefaultError>(baseURL);
     this.API_INSTANCES.set(baseURL, api);
 
     return api;
@@ -30,7 +39,7 @@ export default class API {
   #headers: AllHeaders = {
     default: {
       "Content-Type": "application/json",
-      Accept: "application/json",
+      Accept: "*/*",
     },
   };
 
@@ -45,7 +54,7 @@ export default class API {
    * @returns New API instance
    */
   subPath(path: StartsWith<"/">) {
-    const api = API.single(this.baseURL + path);
+    const api = API.single<DefaultSuccess, DefaultError>(this.baseURL + path);
     api.headers = this.headers;
 
     return api;
@@ -151,9 +160,12 @@ export default class API {
 
   get = async <T>(path: string, queries: Record<string, any> | null = null) => {
     path = this.pathWithQueries(path, queries);
-    return this.axiosInstance.get<T>(path, {
-      headers: this.getHeaders,
-    });
+    return this.axiosInstance.get<ResSuccess<T, DefaultSuccess> | DefaultError>(
+      path,
+      {
+        headers: this.getHeaders,
+      }
+    );
   };
 
   post = async <T>(
@@ -162,7 +174,9 @@ export default class API {
     queries: Record<string, any> | null = null
   ) => {
     path = this.pathWithQueries(path, queries);
-    return this.axiosInstance.post<T>(path, body, {
+    return this.axiosInstance.post<
+      ResSuccess<T, DefaultSuccess> | DefaultError
+    >(path, body, {
       headers: this.postHeaders,
     });
   };
