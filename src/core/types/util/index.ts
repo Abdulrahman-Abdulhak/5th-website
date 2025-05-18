@@ -1,1 +1,1 @@
-export * from "./type-choose";
+export * from "./type-selector";
