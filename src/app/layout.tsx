@@ -5,6 +5,7 @@ import { NotificationBoard } from "@/core";
 
 import "./globals.css";
 import { Footer } from "./shared";
+import { AlertNotificationCardSelect } from "services";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +44,9 @@ export default function RootLayout({
         <Footer />
 
         <div className="overlay">
-          <NotificationBoard />
+          <NotificationBoard
+            NotificationDisplayer={AlertNotificationCardSelect}
+          />
         </div>
       </body>
     </html>

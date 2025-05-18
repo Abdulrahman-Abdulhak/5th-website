@@ -12,9 +12,8 @@ type NotificationsState = {
 
   /**
    * Remove the last added notification from the notifications list
-   * @param notification The notification to add
    */
-  pop: (notification: AppNotification) => void;
+  pop: () => AppNotification | null;
 };
 
 export const useNotificationStore = create<NotificationsState>((set) => ({
@@ -24,11 +23,15 @@ export const useNotificationStore = create<NotificationsState>((set) => ({
     set((state) => ({ notifications: [...state.notifications, notification] }));
   },
   pop() {
+    let notification: AppNotification | null = null;
+
     set((state) => {
       const newNotifications = [...state.notifications];
-      newNotifications.pop();
+      notification = newNotifications.pop() ?? null;
 
       return { notifications: newNotifications };
     });
+
+    return notification;
   },
 }));

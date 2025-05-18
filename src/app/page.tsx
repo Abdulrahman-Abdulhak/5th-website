@@ -1,10 +1,33 @@
-import { isServerUp, login, register } from "services";
+"use client";
 
-export default async function Home() {
-  const cred = await login({
-    username: "abd",
-    password: "pass1!@dSds",
-  });
+import { AppNotificationTypes, usePushNotification } from "@/core";
+import { useEffect } from "react";
 
-  return <div>{JSON.stringify(cred)}</div>;
+export default function Home() {
+  const pushNotification = usePushNotification();
+
+  useEffect(() => {
+    pushNotification({
+      id: 0,
+      content: "Notification Test",
+      type: AppNotificationTypes.error,
+    });
+    pushNotification({
+      id: 1,
+      content: "Notification Test",
+      type: AppNotificationTypes.info,
+    });
+    pushNotification({
+      id: 2,
+      content: "Notification Test",
+      type: AppNotificationTypes.success,
+    });
+    pushNotification({
+      id: 3,
+      content: "Notification Test",
+      type: AppNotificationTypes.warning,
+    });
+  }, []);
+
+  return <div>Testing</div>;
 }
