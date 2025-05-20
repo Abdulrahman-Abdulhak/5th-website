@@ -4,12 +4,13 @@ import React, { Suspense, useEffect, useState } from "react";
 import classNames from "classnames";
 
 import { PropsWithClassName, StartsWith } from "@/core/types";
-import { getIcon } from "@/services";
+import { getIcon } from "../api/assets.service";
 
 import PlaceholderIcon from "./PlaceholderIcon";
+import { Icons } from "../types";
 
 type Props = PropsWithClassName<{
-  icon: string;
+  icon: Icons;
   colorClass?: StartsWith<"text-">;
   sizeClass?: StartsWith<"size-" | "w-" | "h-">;
 }>;

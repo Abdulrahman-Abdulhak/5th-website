@@ -1,9 +1,9 @@
 import { promises as fs } from "node:fs";
 
 /**
- * Assets folder path from the 'src' folder
+ * Icon folders' paths from the 'src' folder
  */
-const assetsFolders = ["/core/assets"];
+const iconsFolders = ["/core/service/icons/assets"];
 
 export async function GET(
   request: Request,
@@ -14,9 +14,9 @@ export async function GET(
   const rootFolder = process.cwd();
   const srcPath = rootFolder + "/src";
 
-  for (const assetsPath of assetsFolders) {
+  for (const iconFolder of iconsFolders) {
     try {
-      const iconPath = srcPath + assetsPath + `/icons/${icon}.svg`;
+      const iconPath = srcPath + iconFolder + `/${icon}.svg`;
       const fileContent = await fs.readFile(iconPath, "utf-8");
 
       return new Response(fileContent, {
