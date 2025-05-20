@@ -1,6 +1,6 @@
 import React from "react";
 
-import { NotificationProps } from "@/core";
+import { Icon, NotificationProps } from "@/core";
 
 import AlertNotificationCard from "./AlertNotificationCard";
 
@@ -8,8 +8,8 @@ function AlertNotificationCardInfo({ notification }: NotificationProps) {
   return (
     <AlertNotificationCard
       notification={notification}
-      icon="Info"
       className="bg-state-neutral-50 text-state-neutral-900"
+      icon={<Icon icon="info" className="size-9" />}
     />
   );
 }
