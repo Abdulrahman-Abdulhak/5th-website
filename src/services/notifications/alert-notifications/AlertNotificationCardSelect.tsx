@@ -9,17 +9,15 @@ import AlertNotificationCardWarning from "./AlertNotificationCardWarning";
 import AlertNotificationCardError from "./AlertNotificationCardError";
 import AlertNotificationCardSuccess from "./AlertNotificationCardSuccess";
 
-function AlertNotificationCardSelect({
-  notification,
-}: NotificationProps) {
+function AlertNotificationCardSelect({ notification }: NotificationProps) {
   switch (notification.type) {
-    case AppNotificationTypes.info:
+    case "info":
       return <AlertNotificationCardInfo notification={notification} />;
-    case AppNotificationTypes.warning:
+    case "warning":
       return <AlertNotificationCardWarning notification={notification} />;
-    case AppNotificationTypes.error:
+    case "error":
       return <AlertNotificationCardError notification={notification} />;
-    case AppNotificationTypes.success:
+    case "success":
       return <AlertNotificationCardSuccess notification={notification} />;
   }
 }

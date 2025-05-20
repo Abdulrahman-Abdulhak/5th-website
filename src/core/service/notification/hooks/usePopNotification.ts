@@ -1,4 +1,5 @@
-import { AppNotification } from "../types";
+"use client";
+
 import { useNotificationStore } from "./store";
 
 export function usePopNotification() {

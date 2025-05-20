@@ -18,7 +18,10 @@ function AlertNotificationCard({
 }: Props) {
   return (
     <div
-      className={classNames("absolute flex items-start gap-2.5", className)}
+      className={classNames(
+        "absolute flex items-start gap-2.5 rounded-lg px-8 py-4",
+        className
+      )}
       style={style}
     >
       {icon}

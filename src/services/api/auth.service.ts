@@ -1,11 +1,12 @@
 "use server";
 
-import { User } from "services/types";
-import serverAPI from ".";
 import assert from "assert";
 
+import { User } from "../types";
+import { mainServer } from "./servers";
+
 const basePath = "/user";
-const api = serverAPI.subPath(basePath);
+const api = mainServer.subPath(basePath);
 
 type RegisterParam = User<false>;
 export const register = async ({

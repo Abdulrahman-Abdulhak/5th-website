@@ -1,11 +1,6 @@
 import React from "react";
 
-export enum AppNotificationTypes {
-  error = "error",
-  warning = "warning",
-  success = "success",
-  info = "info",
-}
+export type AppNotificationTypes = "error" | "warning" | "success" | "info";
 
 export type AppNotification = {
   id: number | string;

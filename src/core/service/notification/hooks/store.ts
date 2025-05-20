@@ -1,4 +1,7 @@
+"use client";
+
 import { create } from "zustand";
+
 import { AppNotification } from "../types";
 
 type NotificationsState = {

@@ -1,9 +1,9 @@
 "use server";
 
-import serverAPI from ".";
+import { mainServer } from "./servers";
 
 const basePath = "/test";
-const api = serverAPI.subPath(basePath);
+const api = mainServer.subPath(basePath);
 
 export async function isServerUp() {
   const res = await api.get<boolean>("/server-up");
