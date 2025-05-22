@@ -6,7 +6,7 @@ import { PopupProps } from "../types";
 
 type Props = PropsReact<PopupProps>;
 
-function PopupCard({ popup, className, style }: Props) {
+function DefaultPopupCard({ popup, className, style }: Props) {
   return (
     <div
       className={classNames("absolute center-flex p-10 bg-white", className)}
@@ -17,4 +17,4 @@ function PopupCard({ popup, className, style }: Props) {
   );
 }
 
-export default PopupCard;
+export default DefaultPopupCard;

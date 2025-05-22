@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import NotificationCard from "./NotificationCard";
+import DefaultNotificationCard from "./DefaultNotificationCard";
 import { useNotifications } from "../hooks";
 import { NotificationProps } from "../types";
 
@@ -11,7 +11,7 @@ type Props = {
 };
 
 function NotificationBoard({
-  NotificationDisplayer = NotificationCard,
+  NotificationDisplayer = DefaultNotificationCard,
 }: Props) {
   const notifications = useNotifications();
 

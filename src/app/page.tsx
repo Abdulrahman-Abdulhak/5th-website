@@ -9,6 +9,7 @@ export default function Home() {
   useEffect(() => {
     pushPopup({
       id: 0,
+      label: "Are you sure?",
       type: "confirm",
       content: "Some Popup Confirmation",
     });

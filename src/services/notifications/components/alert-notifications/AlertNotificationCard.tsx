@@ -19,7 +19,7 @@ function AlertNotificationCard({
   return (
     <div
       className={classNames(
-        "absolute flex items-center gap-2.5 rounded-lg px-8 py-4",
+        "absolute flex items-center gap-2.5 px-8 py-4 rounded-lg",
         className
       )}
       style={style}

@@ -1,2 +1,2 @@
 export { default as PopupBoard } from "./PopupBoard";
-export { default as PopupCard } from "./PopupCard";
+export { default as DefaultPopupCard } from "./DefaultPopupCard";

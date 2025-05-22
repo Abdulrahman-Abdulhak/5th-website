@@ -4,11 +4,14 @@ export type AppPopupTypes =
   | "success"
   | "permission-request"
   | "confirm"
-  | "failed";
+  | "failed"
+  | "logout"
+  | "danger";
 
 export type AppPopup = {
   id: number | string;
   type: AppPopupTypes;
+  label: string | React.ReactNode;
   content: string | React.ReactNode;
 };
 

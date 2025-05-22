@@ -5,15 +5,16 @@ import classNames from "classnames";
 
 import "@/core/utils/built-ins"; // making sure that built-in methods has been defined
 
-import PopupCard from "./PopupCard";
 import { usePopPopup, usePopups } from "../hooks";
 import { PopupProps } from "../types";
+
+import DefaultPopupCard from "./DefaultPopupCard";
 
 type Props = {
   PopupDisplayer?: React.FC<PopupProps>;
 };
 
-function PopupBoard({ PopupDisplayer = PopupCard }: Props) {
+function PopupBoard({ PopupDisplayer = DefaultPopupCard }: Props) {
   const popups = usePopups();
   const pop = usePopPopup();
   const boardRef = useRef<HTMLDivElement | null>(null);

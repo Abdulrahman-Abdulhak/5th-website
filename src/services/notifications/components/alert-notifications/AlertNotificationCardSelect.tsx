@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { AppNotificationTypes, NotificationProps } from "@/core";
+import { NotificationProps } from "@/core";
 
 import AlertNotificationCardInfo from "./AlertNotificationCardInfo";
 import AlertNotificationCardWarning from "./AlertNotificationCardWarning";

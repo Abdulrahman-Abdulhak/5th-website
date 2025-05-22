@@ -6,7 +6,7 @@ import { NotificationProps } from "../types";
 
 type Props = PropsReact<NotificationProps>;
 
-function NotificationCard({ notification, className, style }: Props) {
+function DefaultNotificationCard({ notification, className, style }: Props) {
   return (
     <div className={classNames(className)} style={style}>
       {notification.content}
@@ -14,4 +14,4 @@ function NotificationCard({ notification, className, style }: Props) {
   );
 }
 
-export default NotificationCard;
+export default DefaultNotificationCard;

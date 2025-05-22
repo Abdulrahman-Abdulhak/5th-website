@@ -4,8 +4,9 @@ import { Geist, Poppins, Raleway } from "next/font/google";
 import { NotificationBoard, PopupBoard } from "@/core";
 
 import "./globals.css";
+
 import { Footer } from "./shared";
-import { AlertNotificationCardSelect } from "services";
+import { AlertNotificationCardSelect, PopupCardSelect } from "services";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,7 +48,7 @@ export default function RootLayout({
           <NotificationBoard
             NotificationDisplayer={AlertNotificationCardSelect}
           />
-          <PopupBoard />
+          <PopupBoard PopupDisplayer={PopupCardSelect} />
         </div>
       </body>
     </html>
