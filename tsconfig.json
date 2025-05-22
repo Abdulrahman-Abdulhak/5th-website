@@ -24,7 +24,9 @@
       "@/core": ["core"],
       "@/core/*": ["core/*"],
       "@/services": ["services"],
-      "@/services/*": ["services/*"]
+      "@/services/*": ["services/*"],
+      "@/shared": ["shared"],
+      "@/shared/*": ["shared/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

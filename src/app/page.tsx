@@ -15,5 +15,5 @@ export default function Home() {
     });
   }, []);
 
-  return <Icon icon="cloud-error" className="size-20" />;
+  return <Icon icon="warning-outline" className="size-20" />;
 }

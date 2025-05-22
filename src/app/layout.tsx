@@ -5,7 +5,7 @@ import { NotificationBoard, PopupBoard } from "@/core";
 
 import "./globals.css";
 
-import { Footer } from "./shared";
+import { Footer } from "@/shared";
 import { AlertNotificationCardSelect, PopupCardSelect } from "services";
 
 const geistSans = Geist({
