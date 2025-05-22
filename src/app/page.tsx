@@ -1,16 +1,16 @@
 "use client";
 
-import { Icon, usePushNotification } from "@/core";
+import { Icon, usePushPopup } from "@/core";
 import { useEffect } from "react";
 
 export default function Home() {
-  const pushNotification = usePushNotification();
+  const pushPopup = usePushPopup();
 
   useEffect(() => {
-    pushNotification({
+    pushPopup({
       id: 0,
-      type: "error",
-      content: "Error Notification",
+      type: "confirm",
+      content: "Some Popup Confirmation",
     });
   }, []);
 

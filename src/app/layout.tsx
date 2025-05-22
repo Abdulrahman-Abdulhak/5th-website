@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Poppins, Raleway } from "next/font/google";
 
-import { NotificationBoard } from "@/core";
+import { NotificationBoard, PopupBoard } from "@/core";
 
 import "./globals.css";
 import { Footer } from "./shared";
@@ -47,6 +47,7 @@ export default function RootLayout({
           <NotificationBoard
             NotificationDisplayer={AlertNotificationCardSelect}
           />
+          <PopupBoard />
         </div>
       </body>
     </html>
