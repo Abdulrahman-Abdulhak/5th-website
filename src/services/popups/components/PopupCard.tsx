@@ -15,7 +15,7 @@ function PopupCard({ popup, badge, actions, className, style }: Props) {
   return (
     <div
       className={classNames(
-        "absolute center-flex p-10 rounded-4xl bg-white",
+        "absolute center-flex flex-col p-10 rounded-4xl bg-white",
         className
       )}
       style={style}

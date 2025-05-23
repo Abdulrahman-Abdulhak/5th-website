@@ -1,7 +1,8 @@
 "use client";
 
-import { Icon, usePushPopup } from "@/core";
 import { useEffect } from "react";
+
+import { Icon, usePushPopup } from "@/core";
 
 export default function Home() {
   const pushPopup = usePushPopup();
@@ -10,7 +11,7 @@ export default function Home() {
     pushPopup({
       id: 0,
       label: "Are you sure?",
-      type: "confirm",
+      type: "success",
       content: "Some Popup Confirmation",
     });
   }, []);

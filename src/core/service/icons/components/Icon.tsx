@@ -10,7 +10,7 @@ import PlaceholderIcon from "./PlaceholderIcon";
 import { Icons } from "../types";
 
 type Props = PropsWithClassName<{
-  icon: Icons;
+  icon: Icons | "no-icon";
   colorClass?: StartsWith<"text-">;
   sizeClass?: StartsWith<"size-" | "w-" | "h-">;
 }>;
@@ -52,7 +52,9 @@ function Icon({ icon, colorClass, sizeClass, className }: Props) {
     </div>
   );
 
-  return (
+  return icon === "no-icon" ? (
+    fallback
+  ) : (
     <Suspense fallback={fallback}>
       <SVG icon={icon} className={_className} fallback={fallback} />
     </Suspense>
