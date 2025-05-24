@@ -1,12 +1,26 @@
+import assert from "assert";
+
 import React from "react";
 
 import { PopupProps } from "@/core";
-import { SuccessBadge } from "@/shared";
+import { PrimaryButton, SecondaryButton, SuccessBadge } from "@/shared";
 
 import PopupCard from "./PopupCard";
 
 function PopupCardSuccess({ popup }: PopupProps) {
-  return <PopupCard popup={popup} badge={<SuccessBadge />} />;
+  assert(popup.type === "success");
+
+  return (
+    <PopupCard
+      popup={popup}
+      badge={<SuccessBadge />}
+      actions={
+        <PrimaryButton className="w-full">
+          {popup.continueActionLabel ?? "Continue"}
+        </PrimaryButton>
+      }
+    />
+  );
 }
 
 export default PopupCardSuccess;

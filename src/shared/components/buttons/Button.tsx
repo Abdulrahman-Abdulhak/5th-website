@@ -6,9 +6,11 @@ import { Button as CoreButton, Icon, Icons } from "@/core";
 import { ButtonProps as CoreButtonProps } from "@/core/components/buttons/Button";
 
 export type ButtonProps = {
+  /** An icon to be added along side the children of the button, or as a stand alone child */
   icon?: Icons;
 } & CoreButtonProps;
 
+/** The base component for buttons in this project */
 function Button({ icon, className, children, ...rest }: ButtonProps) {
   return (
     <CoreButton

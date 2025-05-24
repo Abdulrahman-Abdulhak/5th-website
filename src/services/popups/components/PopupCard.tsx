@@ -15,7 +15,7 @@ function PopupCard({ popup, badge, actions, className, style }: Props) {
   return (
     <div
       className={classNames(
-        "absolute center-flex flex-col p-10 rounded-4xl bg-white",
+        "absolute center-flex flex-col p-10 rounded-4xl bg-white min-w-fit w-1/3 max-w-lg",
         className
       )}
       style={style}
@@ -31,7 +31,7 @@ function PopupCard({ popup, badge, actions, className, style }: Props) {
           </Paragraph3>
         </div>
       ) : null}
-      {actions ? <div className="action">{actions}</div> : null}
+      {actions ? <div className="action w-full">{actions}</div> : null}
     </div>
   );
 }
