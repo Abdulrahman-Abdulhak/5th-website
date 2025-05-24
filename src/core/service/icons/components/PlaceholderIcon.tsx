@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * the placeholder icon for the loading and error state of any icon
+ * @returns an svg element
+ */
 function PlaceholderIcon() {
   return (
     <svg

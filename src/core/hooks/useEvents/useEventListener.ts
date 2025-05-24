@@ -24,7 +24,7 @@ export const addListener = (
   if (elementRef instanceof Window) {
     elementRef.addEventListener(event, cb, options);
   } else {
-    elementRef.current?.addEventListener(event, cb, options);
+    elementRef?.current?.addEventListener(event, cb, options);
   }
 };
 
@@ -49,7 +49,7 @@ export const removeListener = (
   if (elementRef instanceof Window) {
     elementRef.removeEventListener(event, cb, options);
   } else {
-    elementRef.current?.removeEventListener(event, cb);
+    elementRef?.current?.removeEventListener(event, cb);
   }
 };
 

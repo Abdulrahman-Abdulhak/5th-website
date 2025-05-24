@@ -10,8 +10,11 @@ import PlaceholderIcon from "./PlaceholderIcon";
 import { Icons } from "../types";
 
 type Props = PropsWithClassName<{
-  icon: Icons | "no-icon";
+  /** an icon name available to use in the system */
+  icon: Icons;
+  /** tailwind text color class for coloring the icon. (icons use the current text color as a color) */
   colorClass?: StartsWith<"text-">;
+  /** tailwind sizing class */
   sizeClass?: StartsWith<"size-" | "w-" | "h-">;
 }>;
 
@@ -43,6 +46,15 @@ function SVG({
 }
 
 // TODO: add a universal SVGs-container element, and make use of the "use" svg element
+/**
+ * Displays an icon from the icons stored in the app assets. includes:
+ * - placeholder for loading and error states
+ * - cache for icons to be fetched once
+ * @default
+ * sizeClass 100% of the parent size
+ * className .icon
+ * @returns a div element with the icon svg as a child
+ */
 function Icon({ icon, colorClass, sizeClass, className }: Props) {
   const _className = classNames("icon", colorClass, sizeClass, className);
 

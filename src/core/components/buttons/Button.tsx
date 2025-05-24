@@ -6,6 +6,10 @@ import { PropsReact } from "@/core/types";
 export type ButtonProps = PropsReact<{}> &
   ButtonHTMLAttributes<HTMLButtonElement>;
 
+/**
+ * The base component for creating any button
+ * @returns a button with base accessibility
+ */
 function Button({ children, id, className, style, ...rest }: ButtonProps) {
   return (
     <button

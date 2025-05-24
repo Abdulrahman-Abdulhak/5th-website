@@ -6,11 +6,13 @@ import classNames from "classnames";
 import { PropsReact } from "@/core/types";
 import { useScroll } from "@/core/hooks";
 
+// TODO: Add JsDoc Comment
 type Props = PropsReact<{
   slides: React.ReactNode[];
   displayedSlides: number;
 }>;
 
+// TODO: Add JsDoc Comment
 function computeSlideHeight(inner: HTMLElement | null) {
   const sliderHeight = inner
     ?.querySelector("li")
@@ -20,6 +22,7 @@ function computeSlideHeight(inner: HTMLElement | null) {
   return sliderHeight;
 }
 
+// TODO: Add JsDoc Comment
 // TODO: Add Scrollbar
 function Slider({ className, style, slides, displayedSlides }: Props) {
   const inner = useRef<HTMLUListElement>(null);

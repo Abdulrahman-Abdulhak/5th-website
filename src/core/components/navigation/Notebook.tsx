@@ -6,6 +6,7 @@ import classNames from "classnames";
 
 import { ClassNameType, PropsWithClassName } from "@/core/types";
 
+// TODO: Add JsDoc Comment
 type Props = PropsWithClassName<{
   tabs: React.ReactNode[];
   views: React.ReactNode[];
@@ -14,6 +15,7 @@ type Props = PropsWithClassName<{
   viewClassName?: ClassNameType;
 }>;
 
+// TODO: Add JsDoc Comment
 function Notebook({
   tabs,
   views,
