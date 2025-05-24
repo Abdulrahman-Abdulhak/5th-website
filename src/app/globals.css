@@ -48,6 +48,9 @@ body {
 
     cursor: pointer;
   }
+  button:disabled {
+    cursor: auto;
+  }
 
   img {
     object-fit: cover;
