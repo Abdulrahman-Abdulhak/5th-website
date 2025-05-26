@@ -6,7 +6,9 @@ import { BadgeProps } from "./types";
 type Props = Required<BadgeProps>;
 
 function GoodBadge({ icon }: Props) {
-  return <Badge icon={icon} className="bg-neutral-100 text-primary-500" />;
+  return (
+    <Badge icon={icon} className="bg-state-neutral-100 text-primary-500" />
+  );
 }
 
 export default GoodBadge;

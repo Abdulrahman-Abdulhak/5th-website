@@ -5,7 +5,7 @@ import { NotificationBoard, PopupBoard } from "@/core";
 
 import "./globals.css";
 
-import { Footer } from "@/shared";
+import { AppBar, Footer, Sidebar } from "@/shared";
 import { AlertNotificationCardSelect, PopupCardSelect } from "services";
 
 const geistSans = Geist({
@@ -41,8 +41,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${poppins.variable} ${raleway.variable} antialiased`}
       >
-        <main>{children}</main>
-        <Footer />
+        <div className="app-layout size-full min-h-screen">
+          <AppBar className="app-bar" />
+          <Sidebar className="sidebar" />
+          <main>{children}</main>
+          <Footer />
+        </div>
 
         <div className="overlay">
           <NotificationBoard

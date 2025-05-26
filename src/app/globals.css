@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @import "../core/styles/system-design.css";
+@import "../shared/styles/style.css";
 
 @theme inline {
   --color-background: var(--background);
@@ -11,53 +12,31 @@
   --font-raleway: var(--font-raleway);
 }
 
-@layer utilities {
-  .transition-filter {
-    transition-property: filter, backdrop-filter;
-    transition-timing-function: var(
-      --tw-ease,
-      var(--default-transition-timing-function)
-        /* cubic-bezier(0.4, 0, 0.2, 1) */
-    );
-    transition-duration: var(
-      --tw-duration,
-      var(--default-transition-duration) /* 150ms */
-    );
-  }
-}
-
-@layer components {
-  .center-flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-raleway), var(--font-poppins), var(--font-geist-sans);
 }
 
-@layer base {
-  button {
-    transition-property: filter, background-color;
-    transition-duration: 100ms;
-    transition-timing-function: ease;
+.app-layout {
+  display: grid;
+  grid-template-areas:
+    "side nav nav"
+    "side main main"
+    "side foot foot";
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
 
-    cursor: pointer;
+  @variant [&>main] {
+    grid-area: main;
   }
-  button:disabled {
-    cursor: auto;
+  @variant [&>.sidebar] {
+    grid-area: side;
   }
-
-  img {
-    object-fit: cover;
-    object-position: center;
+  @variant [&>.app-bar] {
+    grid-area: nav;
   }
-
-  .button {
-    outline: none;
+  @variant [&>footer] {
+    grid-area: foot;
   }
 }

@@ -22,6 +22,7 @@ export default function Home() {
   return (
     <div>
       <Logo type="full" />
+      <PrimaryButton>Confirm</PrimaryButton>
     </div>
   );
 }

@@ -13,9 +13,9 @@ type Props = PropsWithClassName<{
   /** an icon name available to use in the system */
   icon: Icons;
   /** tailwind text color class for coloring the icon. (icons use the current text color as a color) */
-  colorClass?: StartsWith<"text-">;
+  colorClassName?: StartsWith<"text-">;
   /** tailwind sizing class */
-  sizeClass?: StartsWith<"size-" | "w-" | "h-">;
+  sizeClassName?: StartsWith<"size-" | "w-" | "h-" | "min-w-" | "min-h-">;
 }>;
 
 // TODO: Let parent handle the loading state
@@ -55,8 +55,13 @@ function SVG({
  * className .icon
  * @returns a div element with the icon svg as a child
  */
-function Icon({ icon, colorClass, sizeClass, className }: Props) {
-  const _className = classNames("icon", colorClass, sizeClass, className);
+function Icon({ icon, colorClassName, sizeClassName, className }: Props) {
+  const _className = classNames(
+    "icon",
+    colorClassName,
+    sizeClassName,
+    className
+  );
 
   const fallback = (
     <div className={_className}>

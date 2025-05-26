@@ -23,10 +23,10 @@ function PopupCard({ popup, badge, actions, className, style }: Props) {
       {badge ? <div className="badge mb-10">{badge}</div> : null}
       {popup.label || popup.content ? (
         <div className="content center-flex flex-col gap-3 mb-12">
-          <Heading3 className="font-raleway font-semibold text-neutral-900">
+          <Heading3 className="font-raleway font-semibold text-state-neutral-900">
             {popup.label}
           </Heading3>
-          <Paragraph3 className="font-poppins text-neutral-500">
+          <Paragraph3 className="font-poppins text-state-neutral-500">
             {popup.content}
           </Paragraph3>
         </div>

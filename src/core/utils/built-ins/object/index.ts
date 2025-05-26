@@ -12,4 +12,12 @@ Object.defineProperties(Object.prototype, {
     configurable: true,
     writable: true,
   },
+  isPrimitive: {
+    value: function (): boolean {
+      const primitives = ["string", "boolean", "number", "bigint"];
+      return primitives.includes(typeof this.valueOf());
+    },
+    configurable: true,
+    writable: true,
+  },
 });

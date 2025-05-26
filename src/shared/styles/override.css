@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer base {
+  button {
+    cursor: pointer;
+    @variant disabled {
+      cursor: auto;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .button {
+    outline: none;
+  }
+}

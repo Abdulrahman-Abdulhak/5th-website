@@ -11,4 +11,10 @@ export type Icons =
   | "close-circle"
   | "logout-circle"
   | "notifications-line"
-  | "question";
+  | "question"
+  | "doc-search"
+  | "message"
+  | "home-linear"
+  | "map-linear"
+  | "settings-outline"
+  | "ai-chip-spark";
